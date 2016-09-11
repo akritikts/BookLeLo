@@ -1,51 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/drawer_layout"
+<android.support.design.widget.CoordinatorLayout android:background="#424242"
+    android:id="@+id/coordinatorLayout"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <io.codetail.widget.RevealFrameLayout
-        android:id="@+id/conteiner_frame"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:id="@+id/content_overlay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"/>
-        <LinearLayout
-            android:id="@+id/content_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"/>
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:minHeight="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"/>
+            app:title="@string/app_name"></android.support.v7.widget.Toolbar>
 
-    </io.codetail.widget.RevealFrameLayout>
-
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:scrollbarThumbVertical="@android:color/transparent"
-        android:layout_width="80dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start|bottom">
-
-        <LinearLayout
-            android:id="@+id/left_drawer"
-            android:orientation="vertical"
-            android:layout_width="80dp"
+        <android.support.v7.widget.CardView
             android:layout_height="wrap_content"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="0dp"
-            android:background="@android:color/transparent">
-            <!-- Layout of Drawer -->
-        </LinearLayout>
-    </ScrollView>
-</android.support.v4.widget.DrawerLayout>
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_width="match_parent"
+            app:cardBackgroundColor="#ffffff"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="3dp">
+
+                <ImageView
+                    android:layout_height="25dp"
+                    android:layout_weight="0"
+                    android:layout_width="25dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:tint="#ffffff" />
+
+                <AutoCompleteTextView
+                    android:background="@android:color/transparent"
+                    android:hint="Search"
+                    android:id="@+id/search_paper"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:textColor="#333"
+                    android:textColorHint="#666"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ivClearSearch"
+                    android:layout_height="25dp"
+                    android:layout_weight="0"
+                    android:layout_width="25dp"
+                    android:padding="3dp"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    android:tint="#ffffff" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/recyclerEmptyView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="No Papers Found"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rview"
+        android:layout_above="@+id/tabview"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sview"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="45dp"
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.TabLayout
+        android:background="@color/colorPrimary"
+        android:id="@+id/tabview"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        app:tabIndicatorColor="#FFFC2525"
+        app:tabSelectedTextColor="#212121"
+        app:tabTextColor="#fdfdfd"></android.support.design.widget.TabLayout>
+</android.support.design.widget.CoordinatorLayout>

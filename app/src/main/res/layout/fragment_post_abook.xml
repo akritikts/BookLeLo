@@ -69,15 +69,32 @@
         android:layout_height="100dp"
         android:hint="Enter details like the edition and author "
         android:inputType="text" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add snapshots "
+                android:textColor="#ffffff"
+                android:id="@+id/add_pic"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorPrimary"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv"
+                android:layout_weight="1"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add snapshots " />
+        </LinearLayout>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Post Book"
+        android:textColor="#ffffff"
+        android:backgroundTint="@color/colorPrimary"
         android:id="@+id/post_book"/>
 
 

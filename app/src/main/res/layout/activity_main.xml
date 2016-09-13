@@ -1,107 +1,61 @@
-<android.support.design.widget.CoordinatorLayout android:background="#424242"
-    android:id="@+id/coordinatorLayout"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/white"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:id="@+id/layout_top">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_height="wrap_content"
+        <ImageView
             android:layout_width="match_parent"
-            app:title="@string/app_name"></android.support.v7.widget.Toolbar>
+            android:layout_height="3dp"
+            android:background="#2ea3fe"/>
 
-        <android.support.v7.widget.CardView
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_width="match_parent"
-            app:cardBackgroundColor="#ffffff"
-            app:cardCornerRadius="15dp">
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-            <LinearLayout
+            <Button
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:id="@+id/title_bar_left_menu"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:paddingBottom="3dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="3dp">
+                android:padding="7dp"
+                android:text="RESideMenu DEMO"
+                android:textSize="24sp"
+                android:textColor="#999999"
+                android:layout_gravity="center"/>
 
-                <ImageView
-                    android:layout_height="25dp"
-                    android:layout_weight="0"
-                    android:layout_width="25dp"
-                    android:src="@android:drawable/ic_menu_search"
-                    android:tint="#ffffff" />
+            <Button
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:id="@+id/title_bar_right_menu"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"/>
+        </FrameLayout>
 
-                <AutoCompleteTextView
-                    android:background="@android:color/transparent"
-                    android:hint="Search"
-                    android:id="@+id/search_paper"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:singleLine="true"
-                    android:textColor="#333"
-                    android:textColorHint="#666"
-                    android:textSize="15sp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#ebebeb"/>
 
-                <ImageView
-                    android:id="@+id/ivClearSearch"
-                    android:layout_height="25dp"
-                    android:layout_weight="0"
-                    android:layout_width="25dp"
-                    android:padding="3dp"
-                    android:src="@android:drawable/ic_menu_close_clear_cancel"
-                    android:tint="#ffffff" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-    </android.support.design.widget.AppBarLayout>
+    </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/recyclerEmptyView"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:visibility="gone">
+        android:orientation="vertical"
+        android:id="@+id/main_fragment">
+    </FrameLayout>
 
-        <TextView
-            android:layout_centerInParent="true"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="No Papers Found"
-            android:textAppearance="@android:style/TextAppearance.Large"
-            android:textColor="#000000" />
-    </RelativeLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rview"
-        android:layout_above="@+id/tabview"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/sview"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="45dp"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-    </android.support.v7.widget.RecyclerView>
-
-    <android.support.design.widget.TabLayout
-        android:background="@color/colorPrimary"
-        android:id="@+id/tabview"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:layout_height="45dp"
-        android:layout_width="match_parent"
-        app:tabIndicatorColor="#FFFC2525"
-        app:tabSelectedTextColor="#212121"
-        app:tabTextColor="#fdfdfd"></android.support.design.widget.TabLayout>
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

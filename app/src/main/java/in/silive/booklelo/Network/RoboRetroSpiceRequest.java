@@ -1,13 +1,18 @@
+/*
 package in.silive.booklelo.Network;
 
+import in.silive.booklelo.Models.BookModel;
+
+*/
 /**
  * Created by akriti on 13/9/16.
- */
+ *//*
+
 public class RoboRetroSpiceRequest extends RetrofitSpiceRequest<BookModel.BooksList, BookLeLo> {
 
 
     public RoboRetroSpiceRequest() {
-        super(BookModel.PapersList.class, BookLeLo.class);
+        super(BookModel.BooksList.class, BookLeLo.class);
 
     }
 
@@ -18,3 +23,4 @@ public class RoboRetroSpiceRequest extends RetrofitSpiceRequest<BookModel.BooksL
         return getService().papersList();
     }
 }
+*/

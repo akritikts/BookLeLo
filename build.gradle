@@ -2,9 +2,6 @@
 
 buildscript {
     repositories {
-        maven {
-            url "https://jitpack.io"
-        }
         mavenCentral()
         jcenter()
     }
@@ -20,9 +17,6 @@ allprojects {
     repositories {
         maven {
             url "https://jitpack.io"}
-            maven { url "https://raw.github.com/Raizlabs/maven-releases/master/releases" }
-
-
         mavenCentral()
         jcenter()
     }
